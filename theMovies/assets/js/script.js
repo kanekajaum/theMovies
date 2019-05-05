@@ -106,6 +106,15 @@ function alerta(op) {
 
 
 var item = [];
+var qtd = localStorage.length;
+var not = document.getElementById("notificacao");
+
+if (qtd <= 0 ) {
+  not.innerText = "Sem filmes!!!";
+}else{
+  not.innerText = qtd;
+}
+
 
 for (var i = 0; i <= 20 ; i++) {
      var item = localStorage.getItem("fav["+[i]+"]");

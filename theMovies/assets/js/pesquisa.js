@@ -86,14 +86,7 @@ function alerta(op) {
 
 var item = [];
 
-var not = document.getElementById("descricao");
-var qtd = localStorage.length;
 
-not.innerHTML = qtd;
-if (qtd <= 0) {
-  not.className = 'badge badge-info';
-  not.innerHTML = "Sem filmes!!!";
-}
 
 
 for (var i = 0; i <= 20 ; i++) {
