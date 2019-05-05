@@ -20,29 +20,13 @@
 
 
 nomeFilmes += 
-              // '<div class="card bg-dark text-white"  id="'+i+'">'
-              //   +'<img class="img-fluid rounded" id="id'+i+'"src="https://image.tmdb.org/t/p/w500/'+ JSON.parse(xhr.responseText).results[i].backdrop_path  +'" class="card-img-top" alt="...">'
-              //   +'<div class="card-body">'
-              //   +'<div id="p" "name="p">'+JSON.parse(xhr.responseText).results[i].id +'</div>'
-              //     +'<h5 class="card-title"  id="lista'+i+'"><div id="titulo" name="titulo">'+ JSON.parse(xhr.responseText).results[i].title +'</div></h5>'
-                   
-              //     +'<p id="desc" style="display:none;" class="card-text">'+ JSON.parse(xhr.responseText).results[i].overview +'<br/> </p>'
-              //   +'</div>'
-              //   +'<div id="voto" class="alert alert-success text-center" name="voto">' + JSON.parse(xhr.responseText).results[i].vote_average +'</div>'
-              //   +'<div class="card-footer">'
-                  
-              //      +'<a id="'+i+'" class="btn btn-info" onclick="storege(id);" href="paginas/Reprodutor.html" role="button" visualizar() >Visualizar </a> ' 
-              //     +' <a id="'+i+'" class="btn btn-danger" href="#" role="button" onclick="exemplo4(id);" criarCookie('+'lista'+i+'.innerHTML'+')">favorito </a>' 
-              //   +'</div>'
-              // +'</div>'
+          
 
-
-
-            '<div class="card">'
+            '<div class="card" >'
                 +'<img class="img-fluid rounded" id="id'+i+'"src="https://image.tmdb.org/t/p/w500/'+ JSON.parse(xhr.responseText).results[i].backdrop_path  +'" class="card-img-top" alt="...">'
                 +'<div class="card-body">'
 
-                 +'<h5 class="card-title"  id="lista'+i+'"><div id="titulo" name="titulo" style="height:65px;">'+ JSON.parse(xhr.responseText).results[i].title +'</div></h5>'
+                 +'<h5 class="card-title"  id="lista'+i+'"><div id="titulo" name="titulo" style="height:55px;">'+ JSON.parse(xhr.responseText).results[i].title +'</div></h5>'
                   +'<p id="p" style="display:none;" "name="p">'+JSON.parse(xhr.responseText).results[i].id +'</p>'
                   +'<p id="desc" style="display:none;" class="card-text">'+ JSON.parse(xhr.responseText).results[i].overview +'<br/> </p>'
                   +'<a id="'+i+'" class="btn btn-info" onclick="storege('+i+');" href="reprodutor.html" role="button" visualizar() >Descrição</a> ' 
@@ -50,13 +34,11 @@ nomeFilmes +=
                 
                 +'</div>'
                 +'<div class="card-footer">'
-                  +'<small id="voto" class="text-muted">' + JSON.parse(xhr.responseText).results[i].vote_average +'</small>'
+                  +'<div id="voto"  class="badge badge-success ">' + JSON.parse(xhr.responseText).results[i].vote_average +'</div>'
                 +'</div>'
             +'</div>'
 
             }
-
-
 
 
                 
@@ -106,14 +88,11 @@ function alerta(op) {
 
 
 var item = [];
+var res = 0; 
 var qtd = localStorage.length;
 var not = document.getElementById("notificacao");
 
-if (qtd <= 0 ) {
-  not.innerText = "Sem filmes!!!";
-}else{
-  not.innerText = qtd;
-}
+
 
 
 for (var i = 0; i <= 20 ; i++) {
@@ -131,9 +110,22 @@ for (var i = 0; i <= 20 ; i++) {
         var tr_id2 = document.getElementById("id_2"); // pega a tr pelo id
         // adiciona o elemento criado, a partir do nó pai (no caso <table>)
         tr_id2.parentNode.insertBefore(tr, tr_id2);
-        console.log(item);
+        res ++;
+
     }
+    // if (item != null) {
+    //   res ++;
+    // }
+    
 }
+
+
+if (qtd <= 0 ) {
+  not.innerText = "Sem filmes!!!";
+}else{
+  not.innerText = qtd;
+}
+
 
 
 

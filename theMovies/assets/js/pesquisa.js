@@ -82,32 +82,3 @@ function alerta(op) {
 
 }
 
-
-
-var item = [];
-
-
-
-
-for (var i = 0; i <= 20 ; i++) {
-     var item = localStorage.getItem("fav["+[i]+"]");
-    
-
-    if(item != null){
-        var tr = document.createElement("tr"); // cria o elemento tr
-        var td = document.createElement("th"); // cria o element td
-        var td = document.createElement("<td>");
-        var textnode = document.createTextNode(item); 
-        td.appendChild(textnode); // adiciona o texto na td criada
-        tr.appendChild(td); // adiciona a td na tr
-
-        var tr_id2 = document.getElementById("id_2"); // pega a tr pelo id
-        // adiciona o elemento criado, a partir do nó pai (no caso <table>)
-        tr_id2.parentNode.insertBefore(tr, tr_id2);
-        // console.log(item);
-    }
-}
-
-
-
-
