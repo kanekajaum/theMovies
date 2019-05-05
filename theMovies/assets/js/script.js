@@ -81,6 +81,10 @@ function alerta(op) {
          var item = localStorage.getItem("fav["+[i]+"]");
         
 
+        if(item != null){
+            alert("Já esta na sua lista de favoritos!!!");
+            break;
+        }
     }
     alert(titulo[op].innerText +" | Numero de votos: "+ voto[op].innerText);
     favoritoz[op] = titulo[op].innerHTML;
@@ -101,18 +105,7 @@ function alerta(op) {
 }
 
 
-
 var item = [];
-
-var not = document.getElementById("descricao");
-var qtd = localStorage.length;
-
-not.innerHTML = qtd;
-if (qtd <= 0) {
-  not.className = 'badge badge-info';
-  not.innerHTML = "Sem filmes!!!";
-}
-
 
 for (var i = 0; i <= 20 ; i++) {
      var item = localStorage.getItem("fav["+[i]+"]");
@@ -121,7 +114,7 @@ for (var i = 0; i <= 20 ; i++) {
     if(item != null){
         var tr = document.createElement("tr"); // cria o elemento tr
         var td = document.createElement("th"); // cria o element td
-        var td = document.createElement("<td>");
+        var td = document.createElement("td");
         var textnode = document.createTextNode(item); 
         td.appendChild(textnode); // adiciona o texto na td criada
         tr.appendChild(td); // adiciona a td na tr
@@ -129,10 +122,9 @@ for (var i = 0; i <= 20 ; i++) {
         var tr_id2 = document.getElementById("id_2"); // pega a tr pelo id
         // adiciona o elemento criado, a partir do nó pai (no caso <table>)
         tr_id2.parentNode.insertBefore(tr, tr_id2);
-        // console.log(item);
+        console.log(item);
     }
 }
-
 
 
 
